@@ -6,6 +6,7 @@ import "./App.css";
 class App extends React.Component {
   state = {
     data: {},
+    country: "",
   };
 
   async componentDidMount() {
@@ -14,15 +15,30 @@ class App extends React.Component {
     this.setState({ data: fetchedData });
   }
 
+  handleCountryChange = async (country) => {
+
+    if(country==="global")
+    {
+      const fetchedData = await fetchData();
+      this.setState({data: fetchedData , country:""})
+    }
+    else
+    {
+    const fetchedData = await fetchData(country);
+
+    this.setState({ data: fetchedData, country: country });
+    }
+  };
+
   render() {
-    const data = this.state.data;
+    const {data,country} = this.state;
 
     return (
       <div className="App">
         <Logo />
         <Card data={data} />
-        <CountryPicker />
-        <Chart />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country} />
       </div>
     );
   }

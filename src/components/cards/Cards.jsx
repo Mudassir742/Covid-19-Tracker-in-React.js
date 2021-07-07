@@ -21,7 +21,7 @@ const Card = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               separator=","
             />
           </h2>
-          <span>{lastUpdate}</span>
+          <div>{new Date(lastUpdate).toDateString()}</div>
           <p>Number of active cases of COVID-19</p>
         </div>
         <div className="card" id="card2">
@@ -34,7 +34,7 @@ const Card = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               separator=","
             />
           </h2>
-          <span>{lastUpdate}</span>
+          <div>{new Date(lastUpdate).toDateString()}</div>
           <p>Number of recovered cases of COVID-19</p>
         </div>
         <div className="card" id="card3">
@@ -42,7 +42,7 @@ const Card = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           <h2>
             <CountUp start={0} end={deaths.value} duration={3} separator="," />
           </h2>
-          <span>{lastUpdate}</span>
+          <div>{new Date(lastUpdate).toDateString()}</div>
           <p>Number of deaths due to COVID-19</p>
         </div>
       </section>

@@ -2,7 +2,6 @@
 
 .main{
     font-family: 'Roboto', sans-serif;
-    width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,14 +10,14 @@
 
 .card-container{
     display: flex;
-    margin: 1rem;
-    
 }
 
 .card{
+    width:20vw;
     box-shadow: 1px 1px 10px 1px #979197;
     margin: 0 1rem;
     padding:1rem;
+    box-sizing: border-box;
 }
 
 .card:hover{
@@ -26,6 +25,11 @@
     transform: translateY(-6px);
     transition: .5s all ease;
 }
+
+.card h3, .card h2, .card div, .card p{
+
+    margin-bottom: 1rem;
+} 
 
 .card h3{
     color:#979197;
@@ -36,9 +40,16 @@
     font-weight: bold;
 }
 
-.card span{
-    font-size: 16px;
+.card div{
+    font-size: 18px;
+    font-weight: 600;
+    color:#979197;
 }
+
+.card p{
+    word-wrap: break-word;
+}
+
 #card1{
     border-bottom: 10px solid #b900b9;
     border-radius: 5px;
@@ -54,20 +65,40 @@
 
 
 /*make cards responsive*/
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1024px) {
 
 
     .card-container{
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         margin: 1rem;
     }
 
     .card {
-      width: 100%;
+      width:80vw;
       margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+    }
+
+    .card h3{
+        font-size: 2rem;
+        color:#979197;
+    }
+    
+    .card h2{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
+    .card div{
+        font-size: 1.5rem;
+        font-weight: 600;
+        color:#979197;
+    }
+    
+    .card p{
+        font-size: 2rem;
+        word-wrap: break-word;
     }
 }
