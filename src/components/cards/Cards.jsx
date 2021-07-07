@@ -4,8 +4,7 @@ import CountUp from "react-countup";
 import "./Cards.css";
 
 const Card = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  console.log(confirmed);
-
+  
   if (!confirmed) {
     return "Loading...";
   }
