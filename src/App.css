@@ -1,5 +1,4 @@
+
 .App{
-    display: flex;
-    align-items: center;
-    justify-content:center ;
+    border-top:10px solid #54D5C1;
 }
