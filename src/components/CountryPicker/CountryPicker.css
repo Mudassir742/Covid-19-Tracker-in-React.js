@@ -1,0 +1,11 @@
+.countrypicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5rem 0;
+}
+
+.fromcontrol{
+    margin:2rem;
+    width: 100%;
+}
